@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparel Insights Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #detailsButton {
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #buttonContainer {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #tableContainer {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #clock {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apparel Insights Portal</h1>
+    <button id="detailsButton" onclick="showButtons()">Detailed Information</button>
+
+    <div id="buttonContainer">
+        <button class="button" onclick="showTable(1)" style="background-color: #3498db;">Fit Information</button>
+        <button class="button" onclick="showTable(2)" style="background-color: #e74c3c;">Material Information</button>
+        <button class="button" onclick="showTable(3)" style="background-color: #2ecc71;">Care Information</button>
+        <button class="button" onclick="showTable(4)" style="background-color: #f39c12;">Design Information</button>
+    </div>
+
+    <div id="tableContainer"></div>
+
+    <div id="clock"></div>
+
+    <script>
+        function showButtons() {
+            var buttonContainer = document.getElementById('buttonContainer');
+            buttonContainer.style.display = 'flex';
+        }
+
+        function showTable(tableNumber) {
+            var tableContainer = document.getElementById('tableContainer');
+            tableContainer.innerHTML = '';
+
+            var table = document.createElement('table');
+            var data;
+
+            switch (tableNumber) {
+                case 1:
+                    data = [
+                        ['Size', 'M'],
+                        ['Front Length', '28.4 inches'],
+                        ['Shoulder Width', '17.8 inches'],
+                        ['Chest', '39.2 inches'],
+                        ['Across Front', '15.5 inches'],
+                        ['Bottom Opening', '39.2 inches'],
+                        ['Sleeve Length', '8.8 inches'],
+                        ['Armhole Straight', '8.5 inches'],
+                        ['Bicep', '15 inches'],
+                        ['Sleeve Opening', '13 inches'],
+                        ['Neck Width', '7.2 inches']
+                    ];
+                    break;
+                case 2:
+                    data = [
+                        ['Fabric Composition', '98% cotton, 2% elastane'],
+                        ['Wash', 'N/A'],
+                        ['Color', 'Blue'],
+                        ['Dye Used', 'Reactive Dye'],
+                        ['Origin of Cotton', 'USA'],
+                        ['Spinning', 'Bangladesh'],
+                        ['Knitted', 'Bangladesh'],
+                        ['Manufactured In', 'Bangladesh'],
+                        ['Factory', 'Square Apparels Ltd'],
+                        ['Manufacturing Date', '20 December 2023'],
+                        ['Preferred Season', 'Summer']
+                    ];
+                    break;
+                case 3:
+                    data = [
+                        ['Care Instructions'],
+                        ['NORMAL WASH'],
+                        ['NON-CHLORINE BLEACH'],
+                        ['WARM IRON'],
+                        ['DO NOT DRY CLEAN']
+                    ];
+                    break;
+                case 4:
+                    data = [
+                        ['Designer', 'Salina'],
+                        ['Print Method', 'Screen Printing'],
+                        ['Printing Material', 'Reactive Dye']
+                    ];
+                    break;
+                default:
+                    return;
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                var row = table.insertRow();
+                for (var j = 0; j < data[i].length; j++) {
+                    var cell = row.insertCell();
+                    cell.textContent = data[i][j];
+                }
+            }
+
+            tableContainer.appendChild(table);
+        }
+    </script>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            hours = (hours < 10 ? "0" : "") + hours;
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            document.getElementById('clock').textContent = hours + ":" + minutes + ":" + seconds;
+
+            setTimeout(updateClock, 1000);
+        }
+
+        updateClock();
+    </script>
+</body>
+</html>
