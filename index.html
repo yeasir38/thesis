@@ -3,165 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apparel Insights Portal</title>
+    <title>Product Specification</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+            margin: 20px;
         }
-
-        h1 {
-            margin-top: 20px;
-        }
-
-        #detailsButton {
-            background-color: #27ae60;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        #buttonContainer {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .button {
-            width: 200px;
-            height: 50px;
-            margin: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #tableContainer {
-            margin-top: 20px;
-        }
-
         table {
-            width: 80%;
-            margin: 20px auto;
+            width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
-
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid black;
             padding: 8px;
             text-align: left;
         }
-
         th {
             background-color: #f2f2f2;
         }
-
-        #clock {
+        .header {
             text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 18px;
             margin-top: 20px;
-            font-size: 20px;
+        }
+        .comments {
+            color: green;
+        }
+        .comments.red {
+            color: red;
+        }
+        .center {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Apparel Insights Portal</h1>
-    <button id="detailsButton" onclick="showButtons()">Detailed Information</button>
 
-    <div id="buttonContainer">
-        <button class="button" onclick="showTable(1)" style="background-color: #3498db;">Fit Information</button>
-        <button class="button" onclick="showTable(2)" style="background-color: #e74c3c;">Material Information</button>
-        <button class="button" onclick="showTable(3)" style="background-color: #2ecc71;">Care Information</button>
-        <button class="button" onclick="showTable(4)" style="background-color: #f39c12;">Design Information</button>
-    </div>
+    <div class="header">Product Specification Report</div>
 
-    <div id="tableContainer"></div>
+    <table>
+        <tr>
+            <th>Brand Name:</th>
+            <td>DKNY</td>
+            <th rowspan="4" class="center"><img src="product_front.png" alt="Product Front" width="150"><br>Product Front</th>
+            <th rowspan="4" class="center"><img src="product_back.png" alt="Product Back" width="150"><br>Product Back</th>
+        </tr>
+        <tr>
+            <th>Product Description:</th>
+            <td>Printed T-Shirt</td>
+        </tr>
+        <tr>
+            <th>Season:</th>
+            <td>Fall 2024</td>
+        </tr>
+        <tr>
+            <th>Country of Origin:</th>
+            <td>Bangladesh</td>
+        </tr>
+        <tr>
+            <th>Type of Fabric Used:</th>
+            <td>Knit</td>
+            <th>Gender:</th>
+            <td>Man</td>
+        </tr>
+        <tr>
+            <th>Age Type:</th>
+            <td>Adults</td>
+            <th>Production Factory:</th>
+            <td>Ratool Apparels Ltd, Bangladesh</td>
+        </tr>
+        <tr>
+            <th>Shipment Date:</th>
+            <td>1-Feb-2024</td>
+            <th>Style Number:</th>
+            <td>DK23DB300</td>
+        </tr>
+    </table>
 
-    <div id="clock"></div>
+    <div class="section-title">Raw Materials</div>
+    <table>
+        <tr>
+            <th>Fabric Type:</th>
+            <td>Knit</td>
+            <th>Third Party Lab Name:</th>
+            <td>Eurofins MTS Bangladesh</td>
+        </tr>
+        <tr>
+            <th>Sewing Thread Type:</th>
+            <td>Polyester</td>
+            <th>Report Number:</th>
+            <td>MTDK00915</td>
+        </tr>
+        <tr>
+            <th>Fabric Composition:</th>
+            <td>98% Cotton 2% Spandex</td>
+            <th>Lab Test Date:</th>
+            <td>03-01-24</td>
+        </tr>
+        <tr>
+            <th>Origin of Fiber:</th>
+            <td>USA</td>
+            <th>Wash Fastness Rating:</th>
+            <td>Good</td>
+        </tr>
+        <tr>
+            <th>Origin of Fabric:</th>
+            <td>Bangladesh</td>
+            <th>Rubbing Fastness Rating:</th>
+            <td>Moderate</td>
+        </tr>
+        <tr>
+            <th>Dye Used:</th>
+            <td>Reactive Dye</td>
+            <th>Light Fastness Rating:</th>
+            <td>Moderate</td>
+        </tr>
+        <tr>
+            <th>Origin of Dye:</th>
+            <td>India</td>
+            <th>Shrinkage Percentage:</th>
+            <td>3%</td>
+        </tr>
+    </table>
 
-    <script>
-        function showButtons() {
-            var buttonContainer = document.getElementById('buttonContainer');
-            buttonContainer.style.display = 'flex';
-        }
+    <div class="section-title">Measurement Spec (Inch)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Measure Point Name</th>
+                <th>Your Measurement</th>
+                <th>Sellers Measurement</th>
+                <th>Tolerance</th>
+                <th>Deviation</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Chest</td>
+                <td>40.5</td>
+                <td>40</td>
+                <td>(+/-) 3/4</td>
+                <td>(+) 1/2</td>
+                <td class="comments">Within Tolerance</td>
+            </tr>
+            <tr>
+                <td>Front Length</td>
+                <td>27.25</td>
+                <td>28</td>
+                <td>(+/-) 1/2</td>
+                <td>(-) 1/4</td>
+                <td class="comments">Within Tolerance</td>
+            </tr>
+            <tr>
+                <td>Sleeve length</td>
+                <td>18</td>
+                <td>18</td>
+                <td>(+/-) 1/4</td>
+                <td>0</td>
+                <td class="comments">OK</td>
+            </tr>
+            <tr>
+                <td>Waist</td>
+                <td>39.25</td>
+                <td>39</td>
+                <td>(+/-) 3/4</td>
+                <td>(+) 1/4</td>
+                <td class="comments">Within Tolerance</td>
+            </tr>
+            <tr>
+                <td>Bottom Opening</td>
+                <td>39.25</td>
+                <td>40</td>
+                <td>(+/-) 1</td>
+                <td>(-) 3/4</td>
+                <td class="comments">Within Tolerance</td>
+            </tr>
+            <tr>
+                <td>Sleeve Opening</td>
+                <td>19.25</td>
+                <td>19</td>
+                <td>(+/-) 1/4</td>
+                <td>(+) 1/4</td>
+                <td class="comments">Within Tolerance</td>
+            </tr>
+            <tr>
+                <td>Across Front</td>
+                <td>16</td>
+                <td>16</td>
+                <td>(+/-) 1/4</td>
+                <td>0</td>
+                <td class="comments">OK</td>
+            </tr>
+            <tr>
+                <td>Across Back</td>
+                <td>17</td>
+                <td>17</td>
+                <td>(+/-) 1/4</td>
+                <td>0</td>
+                <td class="comments">OK</td>
+            </tr>
+            <tr>
+                <td>Neck Width</td>
+                <td>7.5</td>
+                <td>7.5</td>
+                <td>(+/-) 5/8</td>
+                <td>0</td>
+                <td class="comments">OK</td>
+            </tr>
+            <tr>
+                <td>Biceps</td>
+                <td>21.25</td>
+                <td>21</td>
+                <td>(+/-) 1/4</td>
+                <td>(+) 1/4</td>
+                <td class="comments">Within Tolerance</td>
+            </tr>
+            <tr>
+                <td>Armhole</td>
+                <td>9.25</td>
+                <td>9</td>
+                <td>(+/-) 1/8</td>
+                <td>(+) 1/4</td>
+                <td class="comments red">Beyond Tolerance</td>
+            </tr>
+            <tr>
+                <td>Across Shoulder</td>
+                <td>17.5</td>
+                <td>17.5</td>
+                <td>(+/-) 1/8</td>
+                <td>0</td>
+                <td class="comments">OK</td>
+            </tr>
+        </tbody>
+    </table>
 
-        function showTable(tableNumber) {
-            var tableContainer = document.getElementById('tableContainer');
-            tableContainer.innerHTML = '';
+    <div class="section-title">Care Instructions</div>
+    <ol>
+        <li>Should be ironed at 80 to 120 degree</li>
+        <li>Can be dry cleaned use only petroleum based solvents</li>
+        <li>Machine Washable at slow water current</li>
+        <li>Hang dry only</li>
+        <li>Do not use chlorine based bleach</li>
+    </ol>
 
-            var table = document.createElement('table');
-            var data;
+</body>
+</html>
 
-            switch (tableNumber) {
-                case 1:
-                    data = [
-                        ['Size', 'M'],
-                        ['Front Length', '28.4 inches'],
-                        ['Shoulder Width', '17.8 inches'],
-                        ['Chest', '39.2 inches'],
-                        ['Across Front', '15.5 inches'],
-                        ['Bottom Opening', '39.2 inches'],
-                        ['Sleeve Length', '8.8 inches'],
-                        ['Armhole Straight', '8.5 inches'],
-                        ['Bicep', '15 inches'],
-                        ['Sleeve Opening', '13 inches'],
-                        ['Neck Width', '7.2 inches']
-                    ];
-                    break;
-                case 2:
-                    data = [
-                        ['Fabric Composition', '98% cotton, 2% elastane'],
-                        ['Wash', 'N/A'],
-                        ['Color', 'Blue'],
-                        ['Dye Used', 'Reactive Dye'],
-                        ['Origin of Cotton', 'USA'],
-                        ['Spinning', 'Bangladesh'],
-                        ['Knitted', 'Bangladesh'],
-                        ['Manufactured In', 'Bangladesh'],
-                        ['Factory', 'Square Apparels Ltd'],
-                        ['Manufacturing Date', '20 December 2023'],
-                        ['Preferred Season', 'Summer']
-                    ];
-                    break;
-                case 3:
-                    data = [
-                        ['Care Instructions'],
-                        ['NORMAL WASH'],
-                        ['NON-CHLORINE BLEACH'],
-                        ['WARM IRON'],
-                        ['DO NOT DRY CLEAN']
-                    ];
-                    break;
-                case 4:
-                    data = [
-                        ['Designer', 'Salina'],
-                        ['Print Method', 'Screen Printing'],
-                        ['Printing Material', 'Reactive Dye']
-                    ];
-                    break;
-                default:
-                    return;
-            }
-
-            for (var i = 0; i < data.length; i++) {
-                var row = table.insertRow();
-                for (var j = 0; j < data[i].length; j++) {
-                    var cell = row.insertCell();
-                    cell.textContent = data[i][j];
-                }
-            }
-
-            tableContainer.appendChild(table);
-        }
-    </script>
 
     <script>
         function updateClock() {
